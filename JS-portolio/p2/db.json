@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "nationalHoliday": [
+    "2024-01-01",
+    "2024-02-08",
+    "2024-02-09",
+    "2024-02-13",
+    "2024-02-12",
+    "2024-02-14",
+    "2024-02-28",
+    "2024-04-04",
+    "2024-04-05",
+    "2024-06-10",
+    "2024-09-17",
+    "2024-10-10"
+  ],
+  "pallet": {
+    "count": 40,
+    "aArea": {
+      "total": 10,
+      "normalPrice": 1000,
+      "holidayPrice": 1500
+    },
+    "bArea": {
+      "total": 10,
+      "normalPrice": 1100,
+      "holidayPrice": 1600
+    },
+    "cArea": {
+      "total": 10,
+      "normalPrice": 1200,
+      "holidayPrice": 1700
+    },
+    "dArea": {
+      "total": 10,
+      "normalPrice": 2000,
+      "holidayPrice": 2500
+    }
+  },
+  "booked": [
+    {
+      "date": "2024-08-26",
+      "sellout": {
+        "aArea": 10,
+        "bArea": 10,
+        "cArea": 9,
+        "dArea": 10
+      }
+    },
+    {
+      "date": "2024-09-12",
+      "sellout": {
+        "aArea": 2,
+        "bArea": 2,
+        "cArea": 2,
+        "dArea": 2
+      }
+    },
+    {
+      "date": "2024-09-20",
+      "sellout": {
+        "aArea": 3,
+        "bArea": 3,
+        "cArea": 3,
+        "dArea": 3
+      }
+    },
+    {
+      "date": "2024-09-30",
+      "sellout": {
+        "aArea": 10,
+        "bArea": 8,
+        "cArea": 10,
+        "dArea": 10
+      }
+    },
+    {
+      "date": "2024-10-01",
+      "sellout": {
+        "aArea": 10,
+        "bArea": 10,
+        "cArea": 10,
+        "dArea": 10
+      }
+    }
+  ]
+}

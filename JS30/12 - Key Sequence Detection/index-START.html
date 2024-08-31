@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Key Detection</title>
+  <script type="text/javascript" src="./cornify.js"></script>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+  <script>
+    let ary = [];
+    const password = ['a', 's', 'd', 'f', 'g'];
+
+    window.addEventListener('keydown', check)
+
+    function check(e) {
+      // console.log(e.key);
+      if (ary.length < 5) {
+        ary.push(e.key)
+        console.log(ary);
+      } else {
+        ary.shift();
+        ary.push(e.key);
+      }
+      let checkary = ary.join();
+      if (checkary == password) {
+        cornify_add();
+      }
+    }
+
+  </script>
+</body>
+
+</html>
