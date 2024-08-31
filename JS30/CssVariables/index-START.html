@@ -34,6 +34,8 @@
     }
 
     img {
+      width: 400px;
+      height: 300px;
       filter: blur(var(--blur));
       background: var(--base);
       padding: var(--spacing);
@@ -55,7 +57,7 @@
     <input type="color" name="base" value="#ffc600" data-sizing="">
   </div>
 
-  <img>
+  <img src="space.jpg">
 
 
 
@@ -63,11 +65,9 @@
     const img = document.querySelector('img');
     const inputs = document.querySelectorAll('.controls input');
 
-
     function control() {
       const size = this.dataset.sizing;
       document.documentElement.style.setProperty(`--${this.name}`, this.value + size);
-      document.querySelector('span').style.setProperty(`--${this.name}`, this.value + size);
     }
     inputs.forEach(input => input.addEventListener('input', control));
   </script>

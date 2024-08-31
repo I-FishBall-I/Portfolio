@@ -7,11 +7,11 @@
     <title>JS30</title>
     <link rel="icon" href="/icon/logo.ico" type="image/png">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css'
-          integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
-          crossorigin='anonymous' />
+        integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
+        crossorigin='anonymous' />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js'
-            integrity='sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=='
-            crossorigin='anonymous'></script>
+        integrity='sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=='
+        crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -73,9 +73,10 @@
                             <div class="card-body">
                                 <h4 class="card-title">CssVariables</h4>
                                 <ul class="list-group my-3">
-                                    <li class="list-group-item">CSS設置root偽類來做全域變數再用下方的方法控制</li>
-                                    <li class="list-group-item">透過這賦予變數一個新值 style.setProperty(propertyName, value,
-                                        priority)</li>
+                                    <li class="list-group-item">CSS設置root偽類來做控制</li>
+                                    <li class="list-group-item">(--name) 設定變數名稱<br>(var(--變數名稱)) 使用方式</li>
+                                    <li class="list-group-item">透過這賦予變數一個新值 style.setProperty(更改的屬性, 值,
+                                        '字串'預設不寫則為空)</li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/27</small></p>
@@ -143,11 +144,11 @@
                                 <h4 class="card-title">Type Ahead</h4>
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">fetch() 做API的串接 <a
-                                           href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch">MDN</a>
+                                            href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch">MDN</a>
                                     </li>
                                     <li class="list-group-item">push() 將元素從陣列的尾端塞進去 若加入push(...)則是將元素拆開作為獨立的元素塞入</li>
                                     <li class="list-group-item">RegExp 正規表達式 <a
-                                           href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">MDN</a>
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">MDN</a>
                                     </li>
                                     <li class="list-group-item">match() 檢查是否與正規表達式相符</li>
                                     <li class="list-group-item">join() 用來隔開陣列中每個元素的字串預設為逗號分隔</li>
@@ -222,7 +223,7 @@
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">主要在認識除了平常使用的console.log()，還有info(),warn(),error()等等</li>
                                     <li class="list-group-item"><a
-                                           href="https://developer.mozilla.org/zh-CN/docs/Web/API/console">MDN</a></li>
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/console">MDN</a></li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/30</small></p>
@@ -290,7 +291,7 @@ function selectMany(e) {
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">主要再利用addEventListener來監聽各種DOM進而去操控video的各種元素</li>
                                     <li class="list-group-item"><a
-                                           href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video">MDN</a>
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video">MDN</a>
                                     </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
@@ -373,10 +374,11 @@ function checkImg() {
                                         <br><strong>結論primitive type 是 pass by value，object 是 pass by sharing</strong>
                                     </li>
                                     <li class="list-group-item"><a
-                                           href="https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/">深入探討
+                                            href="https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/">深入探討
                                             JavaScript 中的參數傳遞：call by value 還是 reference？</a></li>
                                     <li class="list-group-item"><a
-                                           href="https://ithelp.ithome.com.tw/articles/10191057">重新認識 JavaScript: Day 05
+                                            href="https://ithelp.ithome.com.tw/articles/10191057">重新認識 JavaScript: Day
+                                            05
                                             JavaScript 是「傳值」或「傳址」？</a></li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
