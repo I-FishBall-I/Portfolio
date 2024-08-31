@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("/image/space.jpg") no-repeat center/cover;
+}
+
+.content {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+h1{
+    color: yellow;
+    text-shadow: 1px 1px 1px #fff;
+    font-family: 'roboto', 'Noto Sans TC', sans-serif;
+}
+.row {
+    width: 340px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+span {
+    margin: 0 20px;
+}
+
+img {
+    width: 100px;
+    background: yellow;
+    border: 4px solid #ccc;
+}
+
+.red {
+    background: #f00;
+}
+
+.green {
+    background: #0f0;
+}

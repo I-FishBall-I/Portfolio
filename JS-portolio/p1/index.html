@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打地鼠遊戲</title>
+    <link rel="icon" href="/icon/logo.ico" type="image/png">
+    <link rel="stylesheet" href="../p1/plugins/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content">
+           <h1>打地鼠遊戲</h1>
+        <div class="row">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+            <img src="../p1/image/state.png">
+        </div>
+        <div class="control">
+            <span>剩餘時間：<span id="time">60</span>S</span>
+            <button id="start">遊戲開始</button>
+            <span>分數：<span id="count">0</span></span>
+            <hr>
+            <h3>遊戲說明</h3>
+            <p>請點擊(或數字鍵1~9)紅色圖片獲得分數（滿分100）</p>
+            <hr>
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector('button');
+        const timeNode = document.querySelector('#time');
+        const countNode = document.querySelector('#count');
+        const animal = document.querySelectorAll('img');
+        const toColor = new Array();
+
+        //遊戲開始
+        const gamestart = function () {
+            //鎖住開始鈕
+            btn.removeEventListener('click', gamestart);
+            btn.innerHTML = "已開始";
+            btn.disabled = true;
+
+            //歸零
+            time = 60;
+            count = 0;
+            timeNode.innerHTML = time;
+            countNode.innerHTML = count;
+
+            //遊戲倒數
+            const timing = setInterval(function () {
+                if (time === 0) {
+                    clearInterval(timing);
+                    btn.addEventListener('click', gamestart)
+                    btn.innerHTML = "遊戲開始";
+                    btn.disabled = false;
+                } else {
+                    time--;
+                    timeNode.innerHTML = `${time}`
+                }
+            }, 1000)
+            //紅色事件
+            for (let i = 0; i < 101; i++) {
+                // const
+                //     atTime = Math.floor(Math.random() * 56000), //遊戲總時間 0~56
+                //     atSpace = Math.floor(Math.random() * 9), //放置位置 0~8
+                //     atShow = Math.floor(Math.random() * 3) + 2; //卡片停留時間 2~4
+                const showObj = {
+                    space: Math.floor(Math.random() * 9),
+                    show: (Math.floor(Math.random() * 3)) + 2,
+                    id: i
+                }
+                setTimeout(function () {
+                    showIt(showObj);
+                }, Math.floor(Math.random() * 58000));
+            }
+        }
+
+        //顯示部分
+        const showIt = function (showObj) {
+
+            if (animal[showObj.space].classList.length === 0) {
+                //yellow to red
+                animal[showObj.space].src = "../p1/image/on.png";
+                animal[showObj.space].classList.add('red');
+                animal[showObj.space].dataset.id=showObj.id;
+                //red to yellow
+                toColor[showObj.id] = setTimeout(function () {
+                    animal[showObj.space].src = "../p1/image/state.png";
+                    animal[showObj.space].classList.remove('red');
+                }, showObj.show * 1000);
+            } else {
+                //若位置沒了要再給一個新的
+                const newSpace = Math.floor(Math.random() * 9);
+                setTimeout(function () {
+                    showObj.space = newSpace;
+                    showIt(showObj);
+                }, 100)
+            }
+        }
+
+        //分數計算
+        const getCount = function (at) {
+            if (animal[at].classList.contains('red')) {
+                animal[at].src = "../p1/image/off.png";
+                animal[at].classList.remove('red');
+                animal[at].classList.add('green');
+                clearTimeout(toColor[animal[at].dataset.id])//透過動物id取消setTimeout
+                delete animal[at].dataset.id;
+                countNode.innerHTML = count++;
+                setTimeout(function () {
+                    animal[at].src = "../p1/image/state.png";
+                    animal[at].classList.remove('green');
+                }, 1000)
+            }
+        }
+
+
+        //event
+        btn.addEventListener('click', gamestart)
+        document.onkeydown = function (e) {
+            // switch (event.keycode) {
+            //     case 103:
+            //         getCount(0); break;
+            //     case 104:
+            //         getCount(1); break;
+            //     case 105:
+            //         getCount(2); break;
+            //     case 100:
+            //         getCount(3); break;
+            //     case 101:
+            //         getCount(4); break;
+            //     case 102:
+            //         getCount(5); break;
+            //     case 97:
+            //         getCount(6); break;
+            //     case 98:
+            //         getCount(7); break;
+            //     case 99:
+            //         getCount(8); break;
+            // }
+            const idxAry = [103, 104, 105, 100, 101, 102, 97, 98, 99];
+            getCount(idxAry.findIndex(item => item === e.keyCode));
+        }
+        animal.forEach(function(v,i){
+            v.addEventListener('click',function(){
+                getCount(i)
+            })
+        })
+    </script>
+</body>
+
+
+</html>
