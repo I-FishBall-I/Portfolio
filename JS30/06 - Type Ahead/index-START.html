@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const
+      cities = [],
+      searchInput = document.querySelector('.search'),
+      suggestions = document.querySelector('.suggestions');
+      // console.log(cities);
+
+    //1.串接api
+    fetch(endpoint).then(res => res.json()).then(json => {
+      cities.push(...json);
+    });
+
+    //2.輸入關鍵字
+    function findMatches(inputWord, cities) {
+      return cities.filter(place => {
+        //g = 找所有符合的結果, i = 忽略大小寫
+        const regex = new RegExp(inputWord, 'gi');
+        //回傳符合的城市或州
+        return place.city.match(regex) || place.state.match(regex);
+      })
+    }
+    
+    //3.顯示結果
+    function displayMatches() {
+      //將輸入的值先傳給findMatches作比對再轉回來做陣列
+      const matchArray = findMatches(this.value, cities);
+      //對陣列的值做遍歷並將輸入的值做maker再回傳html
+      const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+        const population = place.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return `<li>
+              <span class="name">${cityName}, ${stateName}</span>
+              <span class="population">${population}</span>
+            </li>`
+      }).join('');
+      suggestions.innerHTML = html;
+    }
+
+    searchInput.addEventListener('keyup', displayMatches);
+
+  </script>
+</body>
+
+</html>

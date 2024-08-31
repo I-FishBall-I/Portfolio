@@ -1,0 +1,33 @@
+body {
+    font-family: 'roboto', 'Noto Sans TC', sans-serif;
+    background: url("/Portfolio/image/space.jpg") #3338 no-repeat center/cover fixed;
+    color: #fff;
+}
+#top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: #f00;
+    background: #fff;
+    margin-top: 50px;
+}
+#home {
+    margin: 150px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col ul a{
+    color: #000;
+    text-decoration: none;
+    list-style: none;
+}
+.col ul a:hover{
+    color: lightgreen;
+}
+strong{
+    color: #f00;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
