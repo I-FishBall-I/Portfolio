@@ -99,39 +99,32 @@
 
 	<script>
 		//取的所有checkbox
-		const checkInput = document.querySelectorAll('input');
-		//對每個checkbox加上監聽
-		checkInput.forEach((input) => {
-			input.addEventListener('click', selectMany);
-		});
+		const checkInput = Array.from(document.querySelectorAll('input'))
 
-		let lastChecked;
-
+		let lastChecked = null;
+		//按下shift的判斷
 		function selectMany(e) {
-			//確認是否在兩個選中的checkbox之間
-			let inBetween = false;
 			/*
-				如果點擊 Checkbox 2，lastChecked 被設置為 Checkbox 2。
-				按住 Shift 鍵並點擊 Checkbox 4。
-				forEach會遍歷所有的複選框：
-				當遍歷到 Checkbox 2 時，因為它是 lastChecked，所以 inBetween 被設置為 true（表示進入範圍）。
-				遍歷到 Checkbox 3 時，inBetween 已經是 true，所以 Checkbox 3 被選中。
-				當遍歷到 Checkbox 4 時，這個複選框是當前點擊的複選框（this），inBetween 被再次設置為 false（表示離開範圍）
+			第一層判斷
+				當第一次按下先記錄當前索引，否則清空
+			第二層
+				按下shift且第一次不為空則記錄第二次索引
+				在對checkInput陣列進行slice(比較索引小的放前面)
+				對被切出來的陣列跑foreach把每個input勾選起來
 			*/
-			if (e.shiftKey && this.checked) {
-				checkInput.forEach((input) => {
-					if (input === this || input === lastChecked) {
-						inBetween = !inBetween;
-					}
-					//在範圍內的checkbox=true
-					if (inBetween) {
-						input.checked = true;
-					}
-				})
+			if (this.checked) {
+				if (e.shiftKey && lastChecked !== null) {
+					let nowCheck = checkInput.indexOf(this)
+					checkInput.slice(Math.min(nowCheck, lastChecked), Math.max(nowCheck, lastChecked)).forEach(input => input.checked = true);
+				}
+				lastChecked = checkInput.indexOf(this);
+			} else {
+				lastChecked = null;
 			}
-			//更新當前的checked
-			lastChecked = this;
 		}
+		//對每個checkbox加上監聽
+		checkInput.forEach(input => input.addEventListener('click', selectMany));
+
 	</script>
 </body>
 

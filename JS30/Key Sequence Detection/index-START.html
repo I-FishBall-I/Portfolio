@@ -13,19 +13,18 @@
     let ary = [];
     const password = ['a', 's', 'd', 'f', 'g'];
 
-    window.addEventListener('keydown', check)
+    window.addEventListener('keyup', check)
 
     function check(e) {
       // console.log(e.key);
       if (ary.length < 5) {
         ary.push(e.key)
-        console.log(ary);
+        // console.log(ary);
       } else {
         ary.shift();
         ary.push(e.key);
       }
-      let checkary = ary.join();
-      if (checkary == password) {
+      if (ary.join() == password.join()) {
         cornify_add();
       }
     }

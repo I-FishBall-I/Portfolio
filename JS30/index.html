@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS30</title>
-    <link rel="icon" href="/Portfolio/icon/logo.ico" type="image/png">
+    <link rel="icon" href="/icon/logo.ico" type="image/png">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css'
         integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
         crossorigin='anonymous' />
@@ -89,16 +89,17 @@
                 <div class="card mb-3 w-100">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center">
-                            <img src="image/j4.png" class="img-fluid rounded-start">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h4 class="card-title">Array Cardio Day 1</h4>
                                 <ul class="list-group my-3">
-                                    <li class="list-group-item">.map 建立新陣列對原陣列中的每個元素應用指定的函數，並組成一個新陣列，但不會改變原陣列</li>
-                                    <li class="list-group-item">.sort((a,b)=> a > b ? -1 : 1)
-                                        <br>返回負數: a 排在 b 前面。
-                                        <br>返回正數: b 排在 a 前面。
+                                    <li class="list-group-item">.filter 篩選符合條件的元素並組成一個新的陣列</li>
+                                    <li class="list-group-item">.map 對原陣列中的每個元素指定的函數，主動回傳組成新陣列，不會改變原陣列</li>
+                                    <li class="list-group-item">.sort((a,b)=> a - b)
+                                        <br>返回 -1: a 排在 b 前面。
+                                        <br>返回 1: b 排在 a 前面。
                                         <br>返回 0: 保持原順序。
                                     </li>
                                     <li class="list-group-item">.reduce ((總數, 預算的陣列) => 總數 + (預加的數值), 起始值)</li>
@@ -146,7 +147,8 @@
                                     <li class="list-group-item">fetch() 做API的串接 <a
                                             href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch">MDN</a>
                                     </li>
-                                    <li class="list-group-item">push() 將元素從陣列的尾端塞進去 若加入push(...)則是將元素拆開作為獨立的元素塞入</li>
+                                    <li class="list-group-item">push() 將元素從陣列的尾端塞進去
+                                        加入(...data)是使用解構的方式塞進陣列裡<br>若定義變數使用let則可直接使用a=b的方式複寫值</li>
                                     <li class="list-group-item">RegExp 正規表達式 <a
                                             href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">MDN</a>
                                     </li>
@@ -164,7 +166,7 @@
                 <div class="card mb-3 w-100">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center">
-                            <img src="image/j7.png" class="img-fluid rounded-start">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -174,7 +176,8 @@
                                     <li class="list-group-item">every() 比對陣列元素是否符合條件全部符合才回傳true</li>
                                     <li class="list-group-item">find() 找尋陣列中符合條件的元素</li>
                                     <li class="list-group-item">findIndex() 找尋陣列中符合條件元素的索引值</li>
-                                    <li class="list-group-item">splice(從索引幾開始, 刪除幾個, 插入的item)</li>
+                                    <li class="list-group-item">splice(從索引幾開始, 刪除幾個, 插入的item)<span>！！會影響原陣列</span></li>
+                                    <li class="list-group-item">slice(從索引幾開始拿, 拿到第幾個)<span>！！不影響原陣列</span></li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/30</small></p>
@@ -244,32 +247,35 @@
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">主要的解題是要如何確認點選第一次~使用者按下shift所點選的範圍(主要的判斷)</li>
                                     <li class="list-group-item">
-                                        <pre><code>
-function selectMany(e) {
-    //確認是否在兩個選中的checkbox之間
-    let inBetween = false;
-    /*
-        如果點擊 Checkbox 2，lastChecked 被設置為 Checkbox 2。
-        按住 Shift 鍵並點擊 Checkbox 4。forEach會遍歷所有的複選框
-        遍歷到 Checkbox 2 時，因為它是 lastChecked，所以 inBetween 被設置為 true（表示進入範圍）。
-        遍歷到 Checkbox 3 時，inBetween 已經是 true，所以 Checkbox 3 被選中。
-        遍歷到 Checkbox 4 時，這個複選框是當前點擊的複選框（this），inBetween 被設置為 false（表示離開範圍）
-    */
-    if (e.shiftKey && this.checked) {
-        checkInput.forEach((input) => {
-        if (input === this || input === lastChecked) {
-            inBetween = !inBetween;
+                                        <pre><code>//取出所有checkbox
+const checkInput = Array.from(document.querySelectorAll('input'))                                    
+let lastChecked = null;
+    //按下shift的判斷
+    function selectMany(e) {
+        /*
+        第一層判斷
+            當第一次按下先記錄當前索引，否則清空
+        第二層
+            按下shift且第一次不為空則記錄第二次索引
+            在對checkInput陣列進行slice(比較索引小的放前面)
+            對被切出來的陣列跑foreach把每個input勾選起來
+        */
+        if (this.checked) {
+            if (e.shiftKey && lastChecked !== null) {
+                let nowCheck = checkInput.indexOf(this)
+                checkInput.slice(
+                    Math.min(nowCheck, lastChecked), 
+                    Math.max(nowCheck, lastChecked))
+                .forEach(input => input.checked = true);
+            }
+            lastChecked = checkInput.indexOf(this);
+        } else {
+            lastChecked = null;
         }
-        //在範圍內的checkbox=true
-        if (inBetween) {
-            input.checked = true;
-        }
-        })
-    }
-    //更新當前的checked
-    lastChecked = this;
 }
-                                    </code></pre>
+    //對每個checkbox加上監聽
+    checkInput.forEach(input => input.addEventListener('click', selectMany));
+</code></pre>
                                     </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
@@ -335,18 +341,18 @@ function selectMany(e) {
                                     <li class="list-group-item">
                                         監聽scroll讓圖片滑到指定位置決定他該出現還是消失，主要用到window.scroll、offsetTop及clientHeight</li>
                                     <li class="list-group-item">
-                                        <pre><code>
-window.addEventListener('scroll', checkImg)
+                                        <pre><code>window.addEventListener('scroll', checkImg)
 function checkImg() {
+    const
+        windowTop = window.scrollY,  //畫面最頂部的位置
+        windowBottom = window.scrollY + innerHeight;//取得畫面最底部的位置
     document.querySelectorAll('img').forEach(item => {
         const
-            currentPosition = window.scrollY + innerHeight,//取得畫面最底部的位置
             imgTop = item.offsetTop + item.clientHeight / 4,//圖片1/4處
             imgBottom = item.offsetTop + item.clientHeight * 3 / 4,//圖片3/4處
-            imgEnterScreen = currentPosition > imgTop,//如果底部位置超過圖片1/4處則為TRUE讓圖片進入
-            imgInScreen = window.scrollY < imgBottom;//如果頂部位置超過圖片3/4處則為False讓圖片出去
-
-        imgEnterScreen && imgInScreen ? item.classList.add('active') : item.classList.remove('active'); 
+            imgEnterScreen = windowBottom > imgTop,//如果底部位置超過圖片1/4處則為TRUE讓圖片進入
+            imgInScreen = windowTop < imgBottom;//如果頂部位置超過圖片3/4處則為False讓圖片出去
+        imgEnterScreen && imgInScreen ? item.classList.add('active') : item.classList.remove('active');
     })
 }
                                     </code></pre>
@@ -398,9 +404,12 @@ function checkImg() {
                             <div class="card-body">
                                 <h4 class="card-title">LocalStorage</h4>
                                 <ul class="list-group my-3">
-                                    <li class="list-group-item"></li>
-                                    <li class="list-group-item"></li>
-                                    <li class="list-group-item"></li>
+                                    <li class="list-group-item">
+                                        localStorage.getItem(key) 拿取localStorage的物件 key要放物件的名稱
+                                    <br>localStorage.setItem(key,value)設置localStorage <span>value需要轉為字串再放入，不然會變成物件包物件反覆下去</span>
+                                    </li>
+                                    <li class="list-group-item">監聽送出的按鈕 => 取得input的value放入localStorage並設置 
+                                        <br>=> 將資料送入畫面顯示的function將資料整理顯示在畫面上 </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/31</small></p>

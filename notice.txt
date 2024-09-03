@@ -1,0 +1,14 @@
+addEventListener('事件',function)
+
+事件=>{
+    click  點擊
+    change 改變才執行
+    input  滑動就馬上執行
+    mouseup 滑鼠放開
+    mousedown  滑鼠按下
+    mousemove  滑鼠移動
+    keyup  鍵盤抬起
+    keydown  鍵盤按下
+    transitionend  動畫結束才執行
+    submit  送出後執行
+}

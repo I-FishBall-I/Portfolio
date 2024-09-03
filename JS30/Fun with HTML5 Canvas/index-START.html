@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML5 Canvas</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+  <style>
+    body {
+      margin: 0;
+      background: #21252980;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+  <script>
+    // beginPath()  產生一條路徑
+    // moveTo(X-Start, Y-Start)  起始座標
+    // lineTo(X-End, Y-End)  終點座標
+    // lineWidth = number  線的寬度
+    // lineCap =  'butt 切平' 'round 圓形'  'square 方形'  端點樣式
+    // lineJoin = 'bevel 斜角' 'round 圓形' 'miter 尖角'  交點樣式
+    // strokeStyle = color  線條顏色
+    // stroke()  繪製路徑
+    const canves = document.querySelector("#draw");
+    const screen = canves.getContext("2d");
+
+    canves.width = window.innerWidth;
+    canves.height = window.innerHeight;
+
+    canves.addEventListener("mousedown", checkPosition);
+    canves.addEventListener("mouseup", removePosition);
+    //獲取滑鼠位置
+    function checkPosition(e) {
+      x = e.offsetX;
+      y = e.offsetY;
+      canves.addEventListener("mousemove", draw);
+    }
+    //當滑鼠放開時移除事件停止畫畫
+    function removePosition(e) {
+      canves.removeEventListener("mousemove", draw);
+    }
+    let hue = 0,
+      bold = 0,
+      turn = true;
+
+    function draw(e) {
+
+      screen.beginPath();
+      screen.moveTo(x, y); //起始座標
+      screen.lineTo(e.offsetX, e.offsetY); //終點座標
+      screen.lineWidth = bold;
+      screen.lineCap = "round";
+      screen.lineJoin = "round";
+      screen.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+      screen.stroke(); //繪製路徑
+      x = e.offsetX;
+      y = e.offsetY;
+      hue++;
+
+      if (bold > 100 || bold < 0) {
+        turn = !turn;
+      }
+      turn ? bold++ : bold--;
+    }
+  </script>
+</body>
+
+</html>

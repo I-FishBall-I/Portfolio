@@ -23,11 +23,11 @@
       cities = [],
       searchInput = document.querySelector('.search'),
       suggestions = document.querySelector('.suggestions');
-      // console.log(cities);
+    // console.log(cities);
 
     //1.串接api
-    fetch(endpoint).then(res => res.json()).then(json => {
-      cities.push(...json);
+    fetch(endpoint).then(res => res.json()).then(data => {
+      cities.push(...data);
     });
 
     //2.輸入關鍵字
@@ -39,7 +39,7 @@
         return place.city.match(regex) || place.state.match(regex);
       })
     }
-    
+
     //3.顯示結果
     function displayMatches() {
       //將輸入的值先傳給findMatches作比對再轉回來做陣列
@@ -47,8 +47,10 @@
       //對陣列的值做遍歷並將輸入的值做maker再回傳html
       const html = matchArray.map(place => {
         const regex = new RegExp(this.value, 'gi');
+        //replace換成有顏色的class
         const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
         const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+        //數字加上逗號 位數字加上逗號也可用toLocaleString
         const population = place.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         return `<li>
               <span class="name">${cityName}, ${stateName}</span>

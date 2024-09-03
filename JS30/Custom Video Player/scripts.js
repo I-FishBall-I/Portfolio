@@ -6,16 +6,6 @@ const video = document.querySelector("video"),
   progress = document.querySelector(".progress"), //使用者拖移的
   progressBar = document.querySelector(".progress__filled"); //調整整個寬度的
 
-video.addEventListener("click", playToogle);
-play.addEventListener("click", playToogle);
-volum.addEventListener("input", volChg);
-speed.addEventListener("input", speedChg);
-playSkip.forEach((item) => item.addEventListener("click", playSkipChg));
-video.addEventListener("timeupdate", timeUpdate);
-
-progress.addEventListener("mousedown", addPosition);
-progress.addEventListener("mouseup", removePosition);
-
 //控制播放
 function playToogle() {
   if (video.paused) {
@@ -48,6 +38,12 @@ function timeUpdate() {
   const percent = (video.currentTime / video.duration) * 100;
   progressBar.style.flexBasis = `${percent}%`;
 }
+//移動進度條
+function move(e) {
+  const percent = e.offsetX / video.duration;
+  newPosition = percent * video.duration;
+  video.currentTime = newPosition;
+}
 //拖移進度條
 function addPosition(e) {
   progress.addEventListener("mousedown", move);
@@ -56,9 +52,12 @@ function addPosition(e) {
 function removePosition() {
   progress.removeEventListener("mousemove", move);
 }
-//移動進度條
-function move(e) {
-  const percent = e.offsetX / video.duration;
-  newPosition = percent * video.duration;
-  video.currentTime = newPosition;
-}
+
+video.addEventListener("click", playToogle);
+play.addEventListener("click", playToogle);
+volum.addEventListener("input", volChg);
+speed.addEventListener("input", speedChg);
+playSkip.forEach((item) => item.addEventListener("click", playSkipChg));
+video.addEventListener("timeupdate", timeUpdate);
+progress.addEventListener("mousedown", addPosition);
+progress.addEventListener("mouseup", removePosition);

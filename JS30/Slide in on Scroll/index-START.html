@@ -104,7 +104,7 @@
 			vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus
 			expedita
 			quia vero perferendis, deserunt et incidunt eveniet <img src="http://unsplash.it/200/200"
-				 class="align-right slide-in"> temporibus doloremque possimus facilis. Possimus labore, officia dolore!
+				class="align-right slide-in"> temporibus doloremque possimus facilis. Possimus labore, officia dolore!
 			Eaque
 			ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore
 			iste
@@ -241,13 +241,15 @@
 
 		window.addEventListener('scroll', checkImg)
 		function checkImg() {
+			const
+				windowTop = window.scrollY,  //畫面最頂部的位置
+				windowBottom = window.scrollY + innerHeight;//取得畫面最底部的位置
 			document.querySelectorAll('img').forEach(item => {
 				const
-					currentPosition = window.scrollY + innerHeight,//取得畫面最底部的位置
 					imgTop = item.offsetTop + item.clientHeight / 4,//圖片1/4處
 					imgBottom = item.offsetTop + item.clientHeight * 3 / 4,//圖片3/4處
-					imgEnterScreen = currentPosition > imgTop,//如果底部位置超過圖片1/4處則為TRUE讓圖片進入
-					imgInScreen = window.scrollY < imgBottom;//如果頂部位置超過圖片3/4處則為False讓圖片出去
+					imgEnterScreen = windowBottom > imgTop,//如果底部位置超過圖片1/4處則為TRUE讓圖片進入
+					imgInScreen = windowTop < imgBottom;//如果頂部位置超過圖片3/4處則為False讓圖片出去
 				imgEnterScreen && imgInScreen ? item.classList.add('active') : item.classList.remove('active');
 			})
 		}

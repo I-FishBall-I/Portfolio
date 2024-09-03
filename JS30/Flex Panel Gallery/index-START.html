@@ -152,11 +152,17 @@
 
     const panel = document.querySelectorAll('.panel')
 
+    function open() {
+      this.classList.toggle('open')
+    }
+    function openActive(e) {
+      if (e.propertyName.indexOf('flex') !== -1)
+        this.classList.toggle('open-active')
+    }
+
     panel.forEach(node => {
-      node.addEventListener('click', () => {
-        node.classList.toggle('open')
-        node.classList.toggle('open-active')
-      })
+      node.addEventListener('click', open)
+      node.addEventListener('transitionend', openActive)
     })
 
   </script>

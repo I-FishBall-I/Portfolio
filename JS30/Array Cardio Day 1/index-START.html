@@ -45,19 +45,19 @@
     //2
     console.log(inventors.map(inventor => `${inventor.first} ${inventor.last}`));
     //3
-    console.table(inventors.sort((a, b) => a.passed - a.year > b.passed - b.year ? -1 : 1));
+    console.log(inventors.sort((a, b) => a.year - b.year));
     //4
     console.log(inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0));
     //5
-    console.log(inventors.sort((a, b) => (a.passed - a.year > b.passed - b.year ? -1 : 1)));
+    console.table(inventors.sort((a, b) => ( (a.passed - a.year) - (b.passed - b.year))));
     //6
     console.log(people.filter(people => people.includes('Be')));
     //7
-    console.log(people.sort((a, b) =>{
+    console.log(people.sort((a, b) => {
       // console.log(`這是${a} 這是${b}`);
-        const [aLast, aFirst] = a.split(', ');
-        const [bLast, bFirst] = b.split(', ');
-        return aLast > bLast ? 1 : -1;
+      const [aLast, aFirst] = a.split(', ');
+      const [bLast, bFirst] = b.split(', ');
+      return aLast - bLast;
     }));
 
 
