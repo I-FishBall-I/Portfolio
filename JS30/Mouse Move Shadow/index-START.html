@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <div class="hero">
+    <h1>🔥WOAH!</h1>
+  </div>
+
+  <style>
+    html {
+      color: black;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    h1 {
+      text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+      font-size: 100px;
+    }
+  </style>
+
+  <script>
+    document.querySelector('.hero').addEventListener('mousemove', function (e) {
+      //取得目前滑鼠的座標
+      const
+        X = e.offsetX,
+        Y = e.offsetY;
+      //判斷如果不是在自己的範圍內移動則要加上缺失的X,Y
+      if (e.target != this) {
+        X += e.target.offsetLeft
+        Y += e.target.offsetTop
+      }
+      /*計算成百分比
+      1.(X / this.offsetWidth)  範圍會在0~1
+      2.(X / this.offsetWidth) * length  範圍會在0~99
+      3.(X / this.offsetWidth) * length * 2  範圍會在0~200
+      4.(X / this.offsetWidth) * length * 2 - length 範圍會在-100~100
+      */
+      const
+        precentX = Math.floor((X / this.offsetWidth) * 100) * 2 - 100,
+        precentY = Math.floor((Y / this.offsetHeight) * 100) * 2 - 100;
+      document.querySelector('h1').style.textShadow = `
+      ${precentX * -0.3}px ${precentY * -0.3}px 5px rgba(255,0,0,1),
+      ${precentX * -0.6}px ${precentY * -0.6}px 5px rgba(0,255,0,1),
+      ${precentX * -1}px ${precentY * -1}px 5px rgba(0,0,255,1)
+      `
+      // console.log(precentX, precentY);
+    })
+
+  </script>
+</body>
+
+</html>

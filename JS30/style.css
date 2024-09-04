@@ -1,10 +1,6 @@
 body {
     font-family: 'roboto', 'Noto Sans TC', sans-serif;
-<<<<<<< HEAD
-    background: url("/image/space.jpg") #3338 no-repeat center/cover fixed;
-=======
-    background: url("/Portfolio/image/space.jpg") #333 no-repeat center/cover fixed;
->>>>>>> d4c0f5db9108b869a3911b1d27a9ca9a14239035
+    background: url("/Portfolio/image/space.jpg") #3338 no-repeat center/cover fixed;
     color: #fff;
 }
 #top{
@@ -35,9 +31,6 @@ strong{
     padding-top: 1rem;
     padding-left: 2rem;
 }
-<<<<<<< HEAD
 span{
     color: #f00;
 }
-=======
->>>>>>> d4c0f5db9108b869a3911b1d27a9ca9a14239035
