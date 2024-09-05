@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="652333414.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+  <script>
+    const
+      video = document.querySelector('video'),
+      target = document.querySelector('.speed'),
+      bar = document.querySelector('.speed-bar'),
+      min = 0.5,
+      max = 2;
+    function targetHadler(e) {
+      percent = (e.pageY - this.offsetTop) / this.offsetHeight;//0~1
+      const height = Math.round(percent * 100) + "%";//高度
+      bar.style.height = height;//把高的值傳送回去  
+      percent = percent * (max - min) + min; //讓速率介於0.5~2.5 =(大-小)+小    
+      percent > max ? max : percent < min ? min : percent;//鎖死不要讓它超過     
+      const text = Math.round(percent * 100) / 100;//文字
+      bar.textContent = `${text}×`
+      video.playbackRate = percent;//控制速率
+    }
+    target.addEventListener('mousemove', targetHadler)
+  </script>
+</body>
+
+</html>

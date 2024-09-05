@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS30</title>
-    <link rel="icon" href="/icon/logo.ico" type="image/png">
+    <link rel="icon" href="/Portfolio//icon/logo.ico" type="image/png">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css'
         integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
         crossorigin='anonymous' />
@@ -225,8 +225,9 @@
                                 <h4 class="card-title">Dev Tools Domination</h4>
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">主要在認識除了平常使用的console.log()，還有info(),warn(),error()等等</li>
-                                    <li class="list-group-item"><a
-                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/console">MDN</a></li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/console"
+                                            target="_blank">MDN-console</a></li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/30</small></p>
@@ -296,8 +297,9 @@ let lastChecked = null;
                                 <h4 class="card-title">Custom Video Player</h4>
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">主要再利用addEventListener來監聽各種DOM進而去操控video的各種元素</li>
-                                    <li class="list-group-item"><a
-                                            href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video">MDN</a>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video"
+                                            target="_blank">MDN-video</a>
                                     </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
@@ -341,8 +343,7 @@ let lastChecked = null;
                                     <li class="list-group-item">
                                         監聽scroll讓圖片滑到指定位置決定他該出現還是消失，主要用到window.scroll、offsetTop及clientHeight</li>
                                     <li class="list-group-item">
-                                        <pre><code>window.addEventListener('scroll', checkImg)
-function checkImg() {
+                                        <pre><code>function checkImg() {
     const
         windowTop = window.scrollY,  //畫面最頂部的位置
         windowBottom = window.scrollY + innerHeight;//取得畫面最底部的位置
@@ -355,9 +356,11 @@ function checkImg() {
         imgEnterScreen && imgInScreen ? item.classList.add('active') : item.classList.remove('active');
     })
 }
-                                    </code></pre>
-
+window.addEventListener('scroll', checkImg)</code></pre>
                                     </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/dyBQZVQ"
+                                            target="_blank">Codepen</a></li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/08/31</small></p>
@@ -379,10 +382,10 @@ function checkImg() {
                                     <li class="list-group-item">討論pass by Value、pass by References、pass by sharing
                                         <br><strong>結論primitive type 是 pass by value，object 是 pass by sharing</strong>
                                     </li>
-                                    <li class="list-group-item"><a
+                                    <li class="list-group-item text-end"><a
                                             href="https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/">深入探討
                                             JavaScript 中的參數傳遞：call by value 還是 reference？</a></li>
-                                    <li class="list-group-item"><a
+                                    <li class="list-group-item text-end"><a
                                             href="https://ithelp.ithome.com.tw/articles/10191057">重新認識 JavaScript: Day
                                             05
                                             JavaScript 是「傳值」或「傳址」？</a></li>
@@ -406,9 +409,11 @@ function checkImg() {
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">
                                         localStorage.getItem(key) 拿取localStorage的物件 key要放物件的名稱
-                                    <br>localStorage.setItem(key,value)設置localStorage <span>value需要轉為字串再放入，不然會變成物件包物件反覆下去</span>
+                                        <br>localStorage.setItem(key,value)設置localStorage
+                                        <span>value需要轉為字串再放入，不然會變成物件包物件反覆下去</span>
                                     </li>
-                                    <li class="list-group-item">監聽送出的按鈕 => 取得input的value放入localStorage並設置 => 將資料送入function整理顯示在畫面上 </li>
+                                    <li class="list-group-item">監聽送出的按鈕 => 取得input的value放入localStorage並設置 =>
+                                        將資料送入function整理顯示在畫面上 </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/09/03</small></p>
@@ -428,7 +433,8 @@ function checkImg() {
                                 <h4 class="card-title">Mouse Move Shadow</h4>
                                 <ul class="list-group my-3">
                                     <li class="list-group-item">offset計算座標時，如果進入不同的容器時會已進入到的容器來做計算</li>
-                                    <li class="list-group-item">取得滑鼠位置 => 計算offset進入到不同容器的問題 => 將計算過的值重新套入text-shadow </li>
+                                    <li class="list-group-item">取得滑鼠位置 => 計算offset進入到不同容器的問題 => 將計算過的值重新套入text-shadow
+                                    </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/09/03</small></p>
@@ -466,9 +472,11 @@ function checkImg() {
                             <div class="card-body">
                                 <h4 class="card-title">Adding Up Times with Reduce</h4>
                                 <ul class="list-group my-3">
-                                    <li class="list-group-item">querySelectorAll取出來的東西是<span>NODE LIST</span>，很像array但能用的函式很少，所以用Array.from轉成真正的array</li>
+                                    <li class="list-group-item">querySelectorAll取出來的東西是<span>NODE
+                                            LIST</span>，很像array但能用的函式很少，所以用Array.from轉成真正的array</li>
                                     <li class="list-group-item"><span>split切割的東西會是字串</span>，做加總時需轉為數字或偷懶*1</li>
-                                    <li class="list-group-item">取出dataset的時間 => 切割字串 => 使用reduce做加總 => 在對總時間進行計算算成時:分:秒</li>
+                                    <li class="list-group-item">取出dataset的時間 => 切割字串 => 使用reduce做加總 => 在對總時間進行計算算成時:分:秒
+                                    </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/09/04</small></p>
@@ -481,16 +489,393 @@ function checkImg() {
                 <div class="card mb-3 w-100">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center">
-                            <img src="image/j19.png" class="img-fluid rounded-start">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h4 class="card-title">Adding Up Times with Reduce</h4>
+                                <h4 class="card-title">Webcam Fun</h4>
                                 <ul class="list-group my-3">
-                                    <li class="list-group-item"></li>
+                                    <li class="list-group-item">=> mediaDevices.getUserMedia()詢問使用者是否允許使用視訊或音訊的輸入設備
+                                        <br>=> 再將取得的物件存起來並交由canvas的drawImage()將畫面顯示出來
+                                        <br>=> getImageData()將畫面每個像素以 RGBA 格式複製出來，透過改RGBA的數值實現濾鏡效果
+                                        <br>=> putImageData()再將這些修改的數值回傳放進原有的元素裡，再讓Canvas顯示出來
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia"
+                                            target="_blank">MDN-getUserMedia</a>
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/getImageData"
+                                            target="_blank">MDN-Canvas</a>
+                                    </li>
                                 </ul>
                                 <p class="card-text text-center"><small class="text-muted">Finish
                                         Time：2024/09/04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Speech Detection</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">主要在介紹SpeechRecognition這款API</li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/qBzQVjK"
+                                            target="_blank">Codepen</a></li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"
+                                            target="_blank">MDN-SpeechRecognition</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Geolocation</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">getCurrentPosition(成功callback, 失敗callback)只會取得使用者的位置一次
+                                        <br>watchPosition(成功callback, 失敗callback)會一直取得使用者的位置
+                                        <br>常用的參數speed速度、heading方位、latitude緯度、longitude經度
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/qBzQVrY"
+                                            target="_blank">Codepen</a></li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition"
+                                            target="_blank">MDN-Geolocation.watchPosition</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j22.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Follow Along Link Highlighter</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">主要介紹getBoundingClientRect這款API
+                                        <br>常用功能width、height、top、left
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/ZEdmapL"
+                                            target="_blank">Codepen</a></li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"
+                                            target="_blank">MDN-getBoundingClientRect</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Speech Synthesis</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">
+                                        SpeechSynthesisUtterance.voice：播放的語系
+                                        ||SpeechSynthesisUtterance.pitch：播放音調
+                                        SpeechSynthesisUtterance.rate：播放速度
+                                        ||SpeechSynthesisUtterance.text：播放的文字內容
+                                    </li>
+                                    <li class="list-group-item">
+                                        SpeechSynthesis.cancel()：取消播放
+                                        ||SpeechSynthesis.speak()：播放文字
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis"
+                                            target="_blank">MDN-SpeechSynthesis</a>
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance"
+                                            target="_blank">MDN-SpeechSynthesisUtterance</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j24.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Sticky Nav</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">
+                                        <pre><code>const nav = document.querySelector('#main');
+//為了避免套上fixed時高度會被抽離要放一個變數必要時要更新位置
+let nowPosition = nav.offsetTop;
+function scrollHandler() {
+    //當滾軸高大於offsetTop的高度時要加上css樣式
+    if (window.scrollY >= nowPosition) {
+        document.body.classList.add('fixed')
+        document.body.style.paddingTop = nav.offsetTop + "px";
+    } else {
+        document.body.classList.remove('fixed');
+        document.body.style.paddingTop = "";
+    }
+}
+window.addEventListener('scroll', scrollHandler)
+//為了避免版面跑版造成高度改變所以當版面改變時要變更 header 高度
+window.addEventListener('resize', () => {
+    nowPosition = header.offsetHeight;
+})</code></pre>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Event Capture, Propagation, Bubbling and Once</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">
+                                        addEventListener('事件','callback','{capture:false,once:flase,passive:false}')
+                                    </li>
+                                    <li class="list-group-item">介紹addEventListener:Capture phase(外而內)、bubbling
+                                        phase(內而外)、
+                                        <br>事件綁定(對原有的DOM做監聽，但後來新增或刪除的都要再重新做綁定)
+                                        <br>事件委派(在一個範圍內對這裏面得內容作監聽，不管新增與刪除，但需要做查找的動作)
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+                                            target="_blank">MDN-addEventListener() method</a>
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://www.youtube.com/watch?v=wfTR8GJu05Q&list=PLEfh-m_KG4dYbxVoYDyT_fmXZHnuKg2Fq&index=25"
+                                            target="_blank">ALEX</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j26.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Stripe Follow Along Nav</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">使用之前所學得getBoundingClientRect取得位置指定dom到想要的位置</li>
+                                    <li class="list-group-item">取得位置是畫面整體的位置所以必要時還需要扣掉不同容器之間的高度</li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/YzoRdQX"
+                                            target="_blank">Codepen</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j27.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Click and Drag</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">offset、client為區域內 page為整頁</li>
+                                    <li class="list-group-item">
+                                        <pre><code>const item = document.querySelector('.items');
+let positionX = 0;//設一個初始位置
+function start(e) {
+    item.classList.add('active');
+    positionX = e.pageX;//將按下得位置記錄起來
+}
+function startMove(e) {
+    e.preventDefault();
+    let move = e.pageX - positionX;//移動位置=拖動到的位置-初始位置
+    if (item.classList.contains('active')) {
+    moved = true;
+    item.scrollLeft -= move;//將item.scrollLeft減去move，就能拖曳
+    positionX = e.pageX;//重新刷新初始值
+    }
+}
+function stopMove() {
+    item.classList.remove('active');
+}
+item.addEventListener('mousedown', start);//開始
+item.addEventListener('mousemove', startMove);//移動
+item.addEventListener('mouseup', stopMove);//結束
+item.addEventListener('mouseleave', stopMove);//結束
+//解決拖曳時如果內容有連結必須要讓他在過程中不能被觸發
+document.querySelectorAll('.items a').forEach(dom => {
+    dom.addEventListener('click', function (e) {
+    if (moved) e.preventDefault();
+    })
+})</code></pre>
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/mdZQoNd"
+                                            target="_blank">Codepen</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j28.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Video Speed Controller</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">
+                                        <pre><code>const
+video = document.querySelector('video'),
+target = document.querySelector('.speed'),
+bar = document.querySelector('.speed-bar'),
+min = 0.5,
+max = 2;
+function targetHadler(e) {
+percent = (e.pageY - this.offsetTop) / this.offsetHeight;//0~1
+const height = Math.round(percent * 100) + "%";//高度
+bar.style.height = height;//把高的值傳送回去  
+percent = percent * (max - min) + min; //讓速率介於0.5~2.5 =(大-小)+小    
+percent > max ? max : percent < min ? min : percent;//鎖死不要讓它超過     
+const text = Math.round(percent * 100) / 100;//文字
+bar.textContent = `${text}×`
+video.playbackRate = percent;//控制速率
+}
+target.addEventListener('mousemove', targetHadler)</code></pre>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/MDN.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Countdown Timer</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">主要的操作像是Day2的時鐘，都是在對時間的函數作操作</li>
+                                    <li class="list-group-item">
+                                        1.利用setInterval讓(現在的時間戳記+預倒數的時間-現在的時間)不斷倒數
+                                        <br>2.<span>!!dataset取得的值會是字串要做數字的轉換</span>
+                                        <br>3.使用form做資料的傳送但不想轉址可使用e.preventDefault();來取消預設行為
+                                    </li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://codepen.io/I-FishBall-I/pen/XWLoreb">Codepen</a></li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/05</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="image/j30.png" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Whack A Mole</h4>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item"><span>!!主要使用了Proxy以代理的方式用資料帶畫面</span></li>
+                                    <li class="list-group-item">
+                                        <pre><code>const objProxy = new Proxy(obj, {
+get(target, key) {
+    console.log(target, key);
+    return target[key];
+},
+set(target, key, value) {
+    console.log(key, value);
+    target[key] = value;
+}}) </code></pre>
+                                        </li>
+                                        <li class="list-group-item">1.點擊開始 => 2.分數歸零、顯示、時間鎖定 => 3.隨機老鼠的位置、時間 => 4.讓老鼠顯示</li>
+                                    <li class="list-group-item text-end"><a
+                                            href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy">mdn-Proxy</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text text-center"><small class="text-muted">Finish
+                                        Time：2024/09/06</small></p>
                             </div>
                         </div>
                     </div>

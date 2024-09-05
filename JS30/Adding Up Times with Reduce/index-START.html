@@ -185,11 +185,14 @@
     </li>
   </ul>
   <script>
+    //取得所有要計算的物件
     const items = document.querySelectorAll('li');
+    //將取得的li做map將dataset的資料取出來再對這些資料做map將每筆資料做切割並用reduce作值得加總回傳
     let timeList = Array.from(items).map(item => item.dataset.time).map(time => {
       const [min, sec] = time.split(':');
       return min * 60 + sec * 1;
     }).reduce((prev, next) => prev + next, 0);
+    //將取得的時間總數算出時:分:秒
     const
       sec = timeList % 60,
       min = Math.floor((timeList / 60) % 60),

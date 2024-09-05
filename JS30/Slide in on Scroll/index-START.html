@@ -239,7 +239,6 @@
 			};
 		}
 
-		window.addEventListener('scroll', checkImg)
 		function checkImg() {
 			const
 				windowTop = window.scrollY,  //畫面最頂部的位置
@@ -253,6 +252,7 @@
 				imgEnterScreen && imgInScreen ? item.classList.add('active') : item.classList.remove('active');
 			})
 		}
+		window.addEventListener('scroll', checkImg)
 
 	</script>
 
