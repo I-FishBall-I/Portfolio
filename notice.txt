@@ -12,3 +12,30 @@ addEventListener('事件',function)
     transitionend  動畫結束才執行
     submit  送出後執行
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'roboto', 'Noto Sans TC', sans-serif;
+}
+
+background: 
+[background-color] 
+[background-image]
+[background-position] / [background-size] 
+[background-repeat] 
+[background-attachment] 定義背景圖片是隨著頁面內容滾動還是固定在視窗中 主要會用到fixed
+[background-origin] 定義背景圖片的定位起點
+[background-clip]; 定義背景圖片繪製的範圍
+
+vertical-align: middle;
+
+border-top: 50px solid transparent
+border-left: 190px solid #fff
+border-right: 190px solid #fff
+
+linear-gradient(0deg, #fad0c4 0%, #ffd1ff 100%);
+
+translate不可作用在inline上只能作用在block
