@@ -8,7 +8,7 @@
 }
 body {
   font-family: 'roboto', 'Noto Sans TC', sans-serif;
-  background-color: #282c34;
+  background-color: #13243e;
   color: #fff;
 }
 
@@ -83,7 +83,12 @@ nav .navbar-nav li {
   color: #fff;
   line-height: 1.5;
 }
-
+#aboutMe{
+  box-shadow: 0 0 20px #fff;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 50px;
+}
 #aboutMe header {
   height: 50px;
   font-size: 2rem;
