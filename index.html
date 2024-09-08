@@ -21,202 +21,165 @@
     <script src="plugins/js/bootstrap.bundle.js"></script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#Menu">
-    <nav class="navbar navbar-expand-md navbar-dark position-fixed top-0 w-100">
+<body data-bs-spy="scroll" data-bs-target="#menu">
+    <nav class="navbar navbar-expand-md">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="icon/logo.ico" class="me-4" />魚丸の作品集
+            <a class="navbar-brand" href="#home">
+                <img src="icon/logo.ico" />魚丸の作品集
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="Menu">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                    <li class="nav-item mx-3">
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
                     </li>
-                    <li class="nav-item mx-3">
+                    <li class="nav-item">
                         <a class="nav-link" href="#aboutMe">關於我</a>
                     </li>
-                    <li class="nav-item mx-3">
+                    <li class="nav-item">
                         <a class="nav-link" href="#future">未來期許</a>
                     </li>
-                    <li class="nav-item mx-3">
+                    <li class="nav-item">
                         <a class="nav-link" href="#portfolio-nav">作品集</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <section id="home" class="bg-secondary container-fluid">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="image/myphoto.jpg" class="img-fluid" />
-                </div>
-                <div class="col-md-8 d-flex align-items-center position-relative">
-                    <div class="card-body">
-                        <h1 class="card-title lh-lg mx-5 px-5">Front</h1>
-                        <h1 class="card-title lh-lg mx-5 px-5 text-end">Engineer</h1>
-                        <p class="card-text">
-                            我是熱愛網頁設計的初學者，目前專注於學習前端開發技能 (
-                            HTML、CSS、JavaScript)。製作了這個網頁來展示我的作品和技術成長。透過這個作品集，看到我如何一步步進步。
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+    <section id="home" class="container-fluid">
+        <div class="txt">
+            <h2>Front</h2>
+            <h2>Engineer</h2>
+            <p>我是熱愛網頁設計的初學者，目前專注於學習前端開發技能 (HTML、CSS、JavaScript)。
+                <br>製作了這個網頁來展示我的作品和技術成長。
+            </p>
         </div>
     </section>
 
     <section id="aboutMe" class="container">
-        <header class="h2 border-start border-5 px-3 my-4">關於我</header>
-        <div class="row">
-            <div class="col-md-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">個人介紹</h4>
-                        <p>
-                            我叫蘇御珩，今年 22
-                            歲，出生於台中市的一個務農家庭。我的人生目標是成為一名出色的網頁設計師。
-                        </p>
-                        <p>
-                            <strong>性格特質類型(ISTP-T)</strong>，喜歡獨立思考和動手實踐。雖然內向，但我非常有責任心，做事有條理，具備強烈的上進心。在面對問題時，我傾向用理性分析的方式來解決。對於新知識的學習和應對突發情況，我能夠保持冷靜和專注，靈活應變。這種特質讓我在學業和工作中能夠獨立高效地完成任務，並且在自學網頁設計時，能夠保持持續的熱情和動力。
-                        </p>
-                    </div>
-                </div>
+        <header>關於我</header>
+        <div class="item">
+            <div class="txt">
+                <h3>個人介紹</h3>
+                <p> 我叫蘇御珩，今年 22
+                    歲，出生於台中市的一個務農家庭。我的人生目標是成為一名出色的網頁設計師。
+                    <br><strong>性格特質類型(ISTP-T)</strong>，喜歡獨立思考和動手實踐。雖然內向，但我非常有責任心，做事有條理，具備強烈的上進心。在面對問題時，我傾向用理性分析的方式來解決。對於新知識的學習和應對突發情況，我能夠保持冷靜和專注，靈活應變。這種特質讓我在學業和工作中能夠獨立高效地完成任務，並且在自學網頁設計時，能夠保持持續的熱情和動力。
+                </p>
+                <h3>學歷</h3>
+                <ul>
+                    <li>大學：畢業於虎尾科技大學-企業管理系</li>
+                    <li>高中：國立豐原高商-資料處理科</li>
+                </ul>
+                <h3>證照</h3>
+                <ul>
+                    <li>丙級網頁設計技術士</li>
+                    <li>丙級電腦軟體應用技術士</li>
+                    <li>乙級電腦軟體應用技術士</li>
+                    <li>證券商業務員</li>
+                    <li>丙級會計事務技術士</li>
+                    <li>專案規劃師</li>
+                    <li>員工薪酬管理師</li>
+                    <li>中華企業資源規劃學會 ERP 軟體應用師認證 配銷模組</li>
+                </ul>
             </div>
-            <div class="col-md-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">證照</h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">丙級網頁設計技術士</li>
-                            <li class="list-group-item">丙級電腦軟體應用技術士</li>
-                            <li class="list-group-item">乙級電腦軟體應用技術士</li>
-                            <li class="list-group-item">證券商業務員</li>
-                            <li class="list-group-item">丙級會計事務技術士</li>
-                            <li class="list-group-item">專案規劃師</li>
-                            <li class="list-group-item">員工薪酬管理師</li>
-                            <li class="list-group-item">中華企業資源規劃學會 ERP 軟體應用師認證 配銷模組</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">學歷</h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                大學：畢業於虎尾科技大學-企業管理系
-                            </li>
-                            <li class="list-group-item">高中：國立豐原高商-資料處理科</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="pic">
+                <img src="/image/myphoto.jpg">
             </div>
         </div>
     </section>
+
     <section id="future" class="container-fluid">
-        <header class="container py-2">
-            <h2 class="my-5 ps-3 border-start border-5">未來期許</h2>
-            <p class="w-75 mx-auto py-5 px-5 rounded-3 text-center text-bg-light fw-bolder fs-6 futurep">
-                自學網頁設計的過程中，我克服了許多挑戰，這讓我更加堅信這是一條值得探索的道路。未來，我希望能夠持續精進自己的技能，深入學習更多前端和後端技術，並掌握更為複雜的設計概念。我期望在未來能夠參與到更大型的項目中，創造出兼具美觀與功能性的網站，並不斷提升自己的專業水平，成為一名優秀的前端設計師。
+        <header class="container">
+            <h2>未來期許</h2>
+            <p>未來我計劃進一步強化自己的前端開發技能，打好紮實的基礎。
+                由於目前仍處於初學階段，我正透過網路上的資料和實際案例（如JS30）來練習和提升技能。
+                當我有一定的基礎時，我希望能參與更多的實際專案，不僅能將所學知識付諸實踐，也能學習如何在真實環境中解決問題。
+                通過這些實際經驗的累積，我期待能逐步提升自己的能力。此外，當我在前端技術上有一定的能力後，我希望能進一步涉足後端開發，不局限於前端領域。
+                希望在未來能成為一名優秀的全端工程師。
             </p>
         </header>
-
-        <section id="portfolio-nav" class="container">
-            <h2 class="border-start border-5 px-3 my-4">作品集</h2>
+    </section>
+    <section id="portfolio-nav" class="container-fluid">
+        <div class="container">
+            <h2 class="title">作品集</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-7">
-                    <article class="card text-bg-dark overflow-hidden border-0 shadow mb-4">
-                        <img src="image/h4.png" class="card-img" />
-                        <div class="card-img-overlay">
-                            <h3 class="card-title fw-bolder text-warning">
-                                Portfolio 4：JS30
-                            </h3>
-                            <span class="badge rounded-pill text-bg-light bg-opacity-100 mt-5">Finish
-                                Time：2024/08/26~09/06</span>
+                    <article class="item">
+                        <div class="pic">
+                            <img src="image/h4.png" />
+                        </div>
+                        <div class="txt">
+                            <h3>Portfolio 4：JS30</h3>
+                            <span>Finish Time：2024/08/26~09/06</span>
                         </div>
                         <a href="JS30/index.html" target="_blank" class="stretched-link"></a>
                     </article>
-                    <article class="card text-bg-dark overflow-hidden border-0 shadow mb-4">
-                        <img src="image/h3.png" class="card-img" />
-                        <div class="card-img-overlay">
-                            <h3 class="card-title fw-bolder text-warning">
-                                Portfolio 3：訂房系統
-                            </h3>
-                            <span class="badge rounded-pill text-bg-light bg-opacity-100 mt-5">Finish
-                                Time：2024/08/24</span>
+                    <article class="item">
+                        <div class="pic">
+                            <img src="image/h3.png" />
+                        </div>
+                        <div class="txt">
+                            <h3>Portfolio 3：訂房系統</h3>
+                            <span>Finish Time：2024/08/24</span>
                         </div>
                         <a href="JS-portolio/p2/index.html" target="_blank" class="stretched-link"></a>
                     </article>
-                    <article class="card text-bg-dark overflow-hidden border-0 shadow mb-4">
-                        <img src="image/h2.png" class="card-img" />
-                        <div class="card-img-overlay">
-                            <h3 class="card-title fw-bolder text-warning">
-                                Portfolio 2：JS製作打地鼠遊戲
-                            </h3>
-                            <span class="badge rounded-pill text-bg-light bg-opacity-100 mt-5">Finish
-                                Time：2024/08/18</span>
+                    <article class="item">
+                        <div class="pic">
+                            <img src="image/h2.png" />
+                        </div>
+                        <div class="txt">
+                            <h3>Portfolio 2：JS製作打地鼠遊戲</h3>
+                            <span>Finish Time：2024/08/18</span>
                         </div>
                         <a href="JS-portolio/p1/index.html" target="_blank" class="stretched-link"></a>
                     </article>
-                    <article class="card text-bg-dark overflow-hidden border-0 shadow mb-4">
-                        <img src="image/h1.png" class="card-img" />
-                        <div class="card-img-overlay">
-                            <h3 class="card-title fw-bolder text-warning">
-                                Portfolio 1：HTML、CSS初學成果展示
-                            </h3>
-                            <span class="badge rounded-pill text-bg-light bg-opacity-100 mt-5">Finish
-                                Time：2024/08/15~17</span>
+                    <article class="item">
+                        <div class="pic">
+                            <img src="image/h1.png" />
+                        </div>
+                        <div class="txt">
+                            <h3>Portfolio 1：HTML、CSS初學成果展示</h3>
+                            <span>Finish Time：2024/08/15~17</span>
                         </div>
                         <a href="index.html" target="_blank" class="stretched-link"></a>
                     </article>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block bg-secondary bg-opacity-25">
-                    <div class="history ps-3 border-start border-info">
-                        <h2 class="ps-3 mt-5">2024</h2>
+                <div class="col-lg-5 d-none d-lg-block history-box">
+                    <div class="history">
+                        <h2>2024</h2>
                         <div>
-                            <h4 class="my-4 ps-5">8月26號~9月06號</h4>
-                            <p class="ps-5 my-auto pb-3 fw-bolder lh-lg border-bottom">
-                                開始JAVASCRIPT30練習<br />
-                            </p>
-                            <h4 class="my-4 ps-5">8月24號</h4>
-                            <p class="ps-5 my-auto pb-3 fw-bolder lh-lg border-bottom">
-                                訂房系統的JS操作<br />線上課程提供網站樣式，主要完成萬年曆、房型的選擇判斷。(如左側縮圖)<br />
-                            </p>
-                            <h4 class="my-4 ps-5">8月18號</h4>
-                            <p class="ps-5 my-auto pb-3 fw-bolder lh-lg border-bottom">
-                                第一支JAVASCRIPT小遊戲<br />主要是在操作物件上的選擇、setTimeout應用、程式邏輯的思考，最後使用addEventListener來監聽操作者的狀態
-                            </p>
-                            <h4 class="my-4 ps-5">8月17號</h4>
-                            <p class="ps-5 my-auto pb-3 fw-bolder lh-lg border-bottom">
-                                開始學習HTML、CSS以及使用BootStrap製作響應式網站<br />對HTML、CSS有了基本觀念。並完成自己的個人網站
-                            </p>
+                            <h4>8月26號~9月06號</h4>
+                            <p>JAVASCRIPT30練習</p>
+                            <h4>8月24號</h4>
+                            <p>訂房系統的JS操作<br />完成萬年曆、房型的選擇判斷。(如左側縮圖)<br /></p>
+                            <h4>8月18號</h4>
+                            <p>第一支JAVASCRIPT小遊戲<br />主要是在操作物件上的選擇、setTimeout應用、程式邏輯的思考，最後使用addEventListener來監聽操作者的狀態</p>
+                            <h4>8月17號</h4>
+                            <p>開始學習HTML、CSS以及使用BootStrap製作響應式網站<br />對HTML、CSS有了基本觀念。並完成自己的個人網站</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
 
-    <footer class="mt-3">
-        <div class="mx-3 text-center">
+    <footer>
+        <div>
             <h5>聯絡方式</h5>
-            <ul class="list-unstyled">
-                <li>
-                    <i class="fa-solid fa-envelope pe-2 py-2"></i>ds3698741025@gmail.com
-                </li>
-                <li>
-                    <i class="fa-brands fa-github pe-2 py-2"></i><a
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i>ds3698741025@gmail.com</li>
+                <li><i class="fa-brands fa-github"></i><a
                         href="https://github.com/I-FishBall-I/I-FishBall-I">https://github.com/I-FishBall-I/I-FishBall-I</a>
                 </li>
             </ul>
         </div>
-        <div class="container text-center text-secondary">
+        <div class="container">
             <small>
-                本專案僅作開發練習使用<br />Copyright © 2022
+                本專案僅作開發練習使用<br />Copyright &copy; 2022
                 <span class="text-white">魚丸設計</span>. all rights reserved
             </small>
         </div>
