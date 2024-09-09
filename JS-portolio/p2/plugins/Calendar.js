@@ -3,8 +3,6 @@ dayjs.locale('zh-tw');//指定語言
 dayjs.extend(dayjs_plugin_localeData);//將外掛拓展給dayjs
 dayjs.extend(dayjs_plugin_isSameOrBefore);
 dayjs.extend(dayjs_plugin_isBetween);
-
-
 //變數宣告
 const
     fetchPath = "db.josn";
@@ -32,7 +30,6 @@ let
             }
         }
     };
-
 //服務內容
 const calendarService = () => {
     let
@@ -187,7 +184,6 @@ const calendarService = () => {
         tablePrint = () => {
             document.querySelectorAll('form#selectPallet select').forEach(item => {
                 const palletName = item.name;
-
                 //更新下拉選單可賣的數量 select>option
                 const count = tableData.pallet[palletName].sellout;
                 let optionHtml = '';
@@ -199,11 +195,9 @@ const calendarService = () => {
                 };
                 //更新日期以及價格select>parent>前面td兄弟
                 item.parentElement.previousElementSibling.innerHTML = !count ? '' : tableData.pallet[palletName].sellInfo;
-
                 //更新組數select>parent>parent>span
                 item.parentElement.parentElement.querySelector('span').textContent = count;
             });
-
             //標題的寫入form#selectPallet>h3
             document.querySelector('form#selectPallet>h3').textContent = `$ ${tableData.totalPrice} / ${tableData.normalCount}晚平日，${tableData.holidaycount}晚假日`;
         }
@@ -235,7 +229,6 @@ const init = () => {
     fetch('db.json').then(res => res.json()).then(json => {
         //解構賦值
         ({ nationalHoliday, pallet, booked } = json);
-
         //送出訂單的 offcanvas
         const offcanvas = new bootstrap.Offcanvas(document.querySelector('.offcanvas'));
         document.querySelector('form#selectPallet button').onclick = () => {
@@ -258,7 +251,6 @@ const init = () => {
             document.querySelector('.offcanvas h5.card-header').textContent = document.querySelector('form#selectPallet>h3').textContent;
             offcanvas.show();
 
-
             //另一種判斷orderCount都為時無法按下 {立即預約}
             // for (const key in tableData.pallet) {
             //     if (tableData.pallet[key].orderCount === 0)continue;
@@ -266,7 +258,6 @@ const init = () => {
             // }
 
         };
-
 
         //addEventListener事件
         document.querySelector('a[href="#prevCtrl"]').addEventListener('click', (e) => {
@@ -295,7 +286,6 @@ const init = () => {
         calendarCtrl.tableRefresh();
     });
 };
-
 //執行初始化
 init();
 

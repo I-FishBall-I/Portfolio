@@ -83,7 +83,7 @@ nav .navbar-nav li {
   color: #fff;
   line-height: 1.5;
 }
-#aboutMe{
+#aboutMe {
   box-shadow: 0 0 20px #fff;
   border-radius: 20px;
   margin: 40px auto;
@@ -176,7 +176,7 @@ nav .navbar-nav li {
 #portfolio-nav {
   background: url(/Portfolio/image/space-future.jpg) no-repeat center/cover;
 }
-
+/* 縮圖 */
 #portfolio-nav .title {
   height: 50px;
   font-size: 2rem;
@@ -185,11 +185,84 @@ nav .navbar-nav li {
   margin-bottom: 50px;
 }
 
+#portfolio-nav .item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 0 50px 0;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+#portfolio-nav .item:hover {
+  border: 2px solid #fcc231;
+  box-shadow: 2px 2px 5px #fcc231;
+}
+
+#portfolio-nav .item .pic {
+  width: 100%;
+}
+
+#portfolio-nav .item .pic img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+#portfolio-nav .item .txt {
+  width: 100%;
+  height: 100%;
+  background: #282c34bb;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+#portfolio-nav .item:hover .txt {
+  transform: scale(1);
+  color: #fcc231;
+}
+
+#portfolio-nav .item .txt h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: auto;
+  position: relative;
+}
+
+#portfolio-nav .item .txt h3::after {
+  content: '';
+  width: 0;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  transition: 0.5s;
+}
+
+#portfolio-nav .item:hover .txt h3::after {
+  width: 100%;
+}
+
+#portfolio-nav .item .txt span {
+  border-radius: 50px;
+  background: #fff;
+  color: #000;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  margin: auto;
+}
+/* history */
 #portfolio-nav .history-box {
   background: #393e468f;
 }
 
 #portfolio-nav .history {
+  width: 100%;
   margin: 10px;
   padding: 10px;
   border-left: 2px solid #19befe;
@@ -223,63 +296,15 @@ nav .navbar-nav li {
   padding: 0 0 15px 50px;
 }
 
-#portfolio-nav .item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 0 0 50px 0;
-}
-#portfolio-nav .item .pic {
+#portfolio-nav .history .pic {
   width: 100%;
 }
-#portfolio-nav .item .pic img {
-  width: 100%;
+
+#portfolio-nav .history .pic img {
+  width: 80%;
   vertical-align: middle;
-}
-#portfolio-nav .item .txt {
-  width: 100%;
-  height: 100%;
-  background: #282c34bb;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transform: scale(0);
-  transition: 0.5s;
-}
-#portfolio-nav .item:hover .txt {
-  transform: scale(1);  
-  color: #fcc231;
-}
-
-#portfolio-nav .item .txt h3 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin: auto;
-  position: relative;
-}
-
-#portfolio-nav .item .txt h3::after {
-  content: '';
-  width: 0;
-  height: 4px;
-  background-color: #fff;
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  transition: .5s;
-}
-
-#portfolio-nav .item:hover .txt h3::after {
-  width: 100%;
-}
-
-#portfolio-nav .item .txt span {
-  border-radius: 50px;
-  background: #fff;
-  color: #000;
-  padding: 10px;
-  margin: auto;
+  margin: 10px 60px;
+  border-radius: 10px;
 }
 
 footer {
@@ -287,9 +312,11 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
 footer i {
   padding: 0 10px;
 }
+
 footer small {
   color: #1d2027;
 }
@@ -298,6 +325,7 @@ footer a {
   color: #fff;
   text-decoration: none;
 }
+
 footer a:hover {
   color: #19befe;
 }
@@ -337,7 +365,6 @@ footer a:hover {
     color: #19befe;
     transform: translateY(-5px);
   }
-
 
   .navbar-nav .nav-link.active {
     font-size: 1.2rem;
