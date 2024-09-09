@@ -1,5 +1,6 @@
-# 這個專案完整記錄了我在學習前端開發過程中的成長點滴。內容展示了我在自學中所完成的一些小型作品，這些作品不僅是技術的累積，更是我對前端開發的熱情和投入的最好證明。
+## 這個專案完整記錄了我在學習前端開發過程中的成長點滴。內容展示了我在自學中所完成的一些小型作品。
 ### https://i-fishball-i.github.io/Portfolio/
+<<<<<<< HEAD
 ![網站縮圖](/Portfolio/image/finish.png)
 
 # 碼訂房系統的JS操作
@@ -14,3 +15,6 @@
 # JS打地鼠遊戲
 ![案例程式碼](/Portfolio/image/P1-1.png)
 ![案例程式碼](/Portfolio/image/P1-2.png)
+=======
+![網站縮圖](/image/finish.png)
+>>>>>>> e6401ce1065e288c6eca9d942bd679fed71b4c67
