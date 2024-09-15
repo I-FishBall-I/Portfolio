@@ -54,7 +54,7 @@ nav .navbar-nav li {
   height: 100vh;
   background: linear-gradient(115deg, #3b4b6bce 40%, transparent 60%) center
       center/100% 100%,
-    url('/Portfolio/image/space.jpg') right center/auto 100%;
+    url('image/space.jpg') right center/auto 100%;
 }
 #home .txt {
   height: 100%;
@@ -67,25 +67,21 @@ nav .navbar-nav li {
 #home .txt h2 {
   font-family: 'Kalam';
   color: #fff;
-  font-size: 6rem;
+  font-size: 6.5vw;
 }
 #home .txt h2 ~ h2 {
-  color: #fff;
-  font-size: 6rem;
-  font-weight: 400;
   padding: 0 0 10px 200px;
   margin-bottom: 50px;
   border-bottom: 4px solid #fff;
 }
 #home .txt p {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   color: #fff;
   line-height: 1.5;
 }
+
 #aboutMe {
-  box-shadow: 0 0 20px #fff;
-  border-radius: 20px;
   margin: 40px auto;
   padding: 50px;
 }
@@ -94,51 +90,32 @@ nav .navbar-nav li {
   font-size: 2rem;
   border-left: 5px solid#fff;
   padding-left: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
-#aboutMe .item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0 0 10%;
-}
-#aboutMe .item .pic {
-  width: 55%;
-  flex-shrink: 0;
-}
-#aboutMe .item .pic img {
-  width: 80%;
-  vertical-align: middle;
+
+#aboutMe .txt {
+  box-shadow: 0 0 20px #fff;
   border-radius: 20px;
-}
-#aboutMe .item .txt {
-  width: 55%;
   background-color: rgba(40, 79, 138, 0.6);
-  flex-shrink: 0;
   padding: 20px 30px;
-  box-sizing: border-box;
-  z-index: 1;
 }
-#aboutMe .item h3 {
+#aboutMe h3 {
   font-size: 1.5rem;
   font-weight: 600;
   border-bottom: 2px solid #fff;
   padding-bottom: 10px;
 }
-#aboutMe .item p {
+#aboutMe p {
   line-height: 1.5;
   letter-spacing: 0.5rem;
   padding: 10px;
 }
-#aboutMe .item li {
+#aboutMe li {
   line-height: 1.5;
   letter-spacing: 0.5rem;
   padding: 0 0 10px 0;
 }
 
-.item > :first-child {
-  margin-right: -5%;
-}
 
 /* /Portfolio */
 #future {
@@ -375,6 +352,9 @@ footer a:hover {
   #menu a.nav-link.active::after {
     width: 100%;
     transition: 0.5s 0.3s ease-in-out;
+  }
+  #aboutMe .pic-box {
+    margin-top: -60%;
   }
 }
 
