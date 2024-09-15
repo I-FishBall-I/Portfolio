@@ -54,7 +54,7 @@ nav .navbar-nav li {
   height: 100vh;
   background: linear-gradient(115deg, #3b4b6bce 40%, transparent 60%) center
       center/100% 100%,
-    url('image/space.jpg') right center/auto 100%;
+    url('/Portfolio/image/space.jpg') right center/auto 100%;
 }
 #home .txt {
   height: 100%;
